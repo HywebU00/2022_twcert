@@ -1,0 +1,182 @@
+footer {
+    @include box-sizing(border-box);
+    @include clearfix;
+    text-align: left;
+    position:relative;
+    // font-size: 1em;
+    padding: 1em 0;
+    @extend %gradient;
+    color: #FFF;
+    position:relative;
+    z-index: 1;
+    @include screen('mobile') {
+        padding: 2em 0;
+    }
+    .container {
+        @include gutter;
+        >div {
+            padding-bottom: 1em;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+        &[href^="tel:"] {
+            color:#FFF;
+        }
+
+    }
+    // .footer_logo {
+    //     @include make-xs-column(8);
+    //     @include make-sm-column(3);
+    //     @include make-md-column(3);
+    //     @include make-lg-column(3);
+    //     @include gutter();
+    // }
+    .footer_info {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(6);
+        @include make-lg-column(7);
+        @include gutter();
+    }
+    .footer_4 {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+        a{
+            display:block;
+        }
+    }
+    .footer_4 {
+        @include screen('mobile') {
+            border-bottom: 1px solid rgba(221, 221, 221, .5);
+            margin-bottom: 1em;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin: 0;
+            overflow: hidden;
+            margin-bottom: .5em;
+        }
+        ul {
+            @include li-reset;
+            margin-top: .5em;
+            overflow: hidden;
+            li {
+                margin-bottom: .8em;
+            }
+            a {
+                color: #FFF;
+                &[href^="tel:"] {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    @include screen('tablet') {
+                        font-size: 1.125em;
+                    }
+                }
+
+            }
+        }
+        img {
+            float: left;
+            margin: 0px 1.5em 2em 0;
+            width: 60px;
+
+        }
+    }
+    hr {
+        @include screen('mobile') {
+            opacity: 0;
+        }
+    }
+    .footer_icon {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(6);
+        @include make-lg-column(5);
+        @include gutter();
+    }
+    .footer_share {
+        @include li-reset;
+        @extend %clearfix;
+        li {
+            width: 45px;
+            height: 45px;
+            float: left;
+            margin: 0px 1em .5em 0;
+            a {
+                display: block;
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        li {
+            float: left;
+            display: block;
+            margin: .5em 5px .5em 0px;
+            a {
+                display: block;
+                padding: .5em 1.5em;
+                background: darken($primaryColor, 10);
+                color: #FFF;
+                border-radius: 4px;
+                font-size:.938em;
+                @include transition(all, .3s, ease-out);
+                &:hover,
+                &:focus {
+                    background: darken($primaryColor, 5);
+                }
+            }
+        }
+    }
+    p {
+        line-height: 1.45em;
+        font-size: .938em;
+        margin: 0 0 .5em 0;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: #FFF;
+            padding: 0 .5em;
+        }
+    }
+    .footer_icon {
+        a {
+            display: inline-block;
+            vertical-align: top;
+            max-width: 140px;
+            color: #FFF;
+            text-align: center;
+            font-size: .75em;
+            line-height: 1.25em;
+            @include box-sizing;
+            padding: 0px .5em;
+            @include screen('mobile') {
+                max-width: 100px;
+            }
+        }
+        img {
+            max-width: 120px;
+            width: 100%;
+        }
+    }
+}

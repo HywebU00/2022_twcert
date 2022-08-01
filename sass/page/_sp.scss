@@ -1,0 +1,448 @@
+.sp {
+    max-width: 960px;
+    margin: 0px auto 1em;
+    .table_wrapper {
+        th {
+            width: 35%;
+            white-space: normal;
+            @include screen('mobile') {
+                width: 160px;
+            }
+        }
+        h4 {
+            color: #000;
+        }
+    }
+    table {
+        th {
+            text-align: left;
+            padding-left: 1.5em;
+            position: relative;
+        }
+    }
+    p {
+        &.red {
+            color: red;
+        }
+        &.text-center {
+            text-align: center;
+        }
+    }
+    h3 {
+        &:before {
+            position: relative;
+            display: inline-block;
+            margin-right: .5em;
+            content: ">>";
+            color: $color-orange;
+            font-weight: bold;
+        }
+    }
+    h4 {
+        color: $color-blue;
+        font-size: 1.125em;
+        &.title_block {
+            margin: 0 0 .3em;
+            padding: 1em .5em .8em !important;
+            width: auto;
+            padding: 1em 2em;
+            border-bottom: 1px solid #CCC;
+        }
+        margin-bottom: .5em;
+    }
+    %sp_block {
+        border: 1px solid RGBA(255, 255, 255, .8);
+        background: RGBA(250, 250, 250, .8);
+        box-shadow: 0.1rem 0 0 0 #d2d2d2, -0.1rem 0 0 0 #d2d2d2, 0 0.1rem 0 0 #b6b6b6, 0 0.2rem 0 0 #d2d2d2, 0.2rem 0 0 0 #e6e6e6, -0.2rem 0 0 0 #e6e6e6, 0 0.3rem 0 0 #e6e6e6, 0 -0.1rem 0 0 #e6e6e6;
+        border-radius: 8px;
+        padding: 1em 2em 3em;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2em;
+        margin-top: .5em;
+        @include box-sizing;
+        background: #FFF;
+        &:after {
+            content: "";
+            width: 100%;
+            height: 30px;
+            @include gradient(#FFF, #EEE, vertical);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            z-index: 0;
+        }
+    }
+    .info_block {
+        .step_block, .id_block {
+            @include screen('mobile') {
+                ul {
+                    li {
+                        display: block;
+                    }
+                }
+            }
+        }
+        th, label, legend {
+            .necessary {
+                position: absolute;
+                left: .4em;
+            }
+        }
+        ul,
+        ol {
+            padding-left: 1em;
+            ul, ol {
+                padding-left: 2em;
+                margin-top: .5em;
+            }
+        }
+        li {
+            margin-bottom: .5em;
+        }
+        ul {
+            li {
+                list-style: disc;
+            }
+        }
+        .btn {
+            color: #FFF;
+            &:hover,
+            &:focus {
+                color: #FFF;
+            }
+        }
+        .img_float {
+            margin: 0em 1em 1em 0;
+            max-width: 100%;
+            float: left;
+            display: block;
+            @include screen('mobile') {
+                max-width: 80%;
+                float: none;
+                margin: .2em auto;
+                clear: both;
+            }
+        }
+        @extend %sp_block;
+        padding: 1em 2em 3em;
+        line-height: 1.65em;
+        a {
+            @include aSetting();
+        }
+        span {
+            color: $color-orange;
+            &.subtitle {
+                color: #999;
+                display: inline-block;
+                margin-left: .5em;
+                font-size: .813em;
+                font-weight: normal;
+            }
+        }
+    }
+    .form_grid {
+        @extend %sp_block;
+        margin-left: 0;
+        margin-right: 0;
+        @include screen('mobile') {
+            padding: .5em 1em 1.5em;
+        }
+        .form_grp {
+            border: none;
+            @include screen('mobile') {
+                margin: .1em 0 .5em;
+                padding: 0;
+            }
+        }
+        label.form_title, legend.form_title {
+            text-align: right;
+            font-weight: bold;
+            span.subtitle {
+                display: block;
+                color: #999;
+                font-size: .813em;
+                font-weight: normal;
+                @include screen('mobile') {
+                    display: inline-block;
+                }
+            }
+            @include screen('mobile') {
+                text-align: left;
+                margin-bottom: .1em;
+            }
+            &~.form_content {
+                padding: 0;
+                @include gutter;
+                input[type="text"] {
+                    width: 100%;
+                }
+                &+.form_inline {
+                    span {
+                        display: inline-block;
+                        input[type="text"] {
+                            width: auto;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        .title_block {
+            display: block;
+            float: none;
+            width: auto;
+            padding: 1em 2em;
+            border-bottom: 1px solid #CCC;
+            @include screen('mobile') {
+                padding: 1em;
+            }
+            ~.form_content {
+                width: 100%;
+                display: block;
+                clear: both;
+                padding: 1em 2em;
+                @include screen('mobile') {
+                    padding: 1em;
+                }
+            }
+        }
+        .form_content {
+            padding: 1em 2em;
+            input[type="text"] {
+                width: auto;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: .5em;
+                @include screen('mobile') {
+                    width: 100%;
+                }
+            }
+            button {
+                vertical-align: top;
+                margin-top: 0;
+                margin-bottom: .5em;
+                i {
+                    margin-right: .3em;
+                }
+                padding-left: 1em !important;
+                padding-right: 1em !important;
+            }
+            span.captcha {
+                display: inline-block;
+            }
+        }
+    }
+    .id_block {
+        @extend %clearfix;
+        margin: .5em auto;
+        @include box-sizing;
+        ul {
+            @include li-reset;
+            li {
+                width: 26.5%;
+                min-width: 155px;
+                list-style: none;
+                float: left;
+                height: 120px;
+                margin-right: 3%;
+                @include border-radius(8px);
+                @include gradient(#F1F1F1, #DDD, vertical);
+                text-align: left;
+                padding: 1em;
+                position: relative;
+                a{
+                    display:block;
+                    position:absolute;
+                    width:100%;
+                    top:0;
+                    left: 0;
+                    height: 100%;
+                    padding:1em;
+                }
+                &:last-child {
+                    margin-right: 0;
+                    &:after {
+                        display: none;
+                    }
+                    @include screen('mobile') {
+                        margin-right: auto;
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+                @include screen('mobile') {
+                    width: 90%;
+                    margin: 0px auto;
+                    float: none;
+                    height: 60px;
+                    margin-bottom: .5em;
+                    text-align: left;
+                    overflow: hidden;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                .id_name {
+                    font-weight: bold;
+                    font-size: 1.4em;
+                    overflow: hidden;
+                }
+                small {
+                    font-weight: bold;
+                    color: #666;
+                    overflow: hidden;
+                }
+                img {
+                    position: absolute;
+                    top: 50px;
+                    right: 30px;
+                    width: 120px;
+                    height: 240px;
+                    @include screen('mobile') {
+                        top: 0px;
+                    }
+                }
+                &.active, &:hover, &:focus {
+                    @include gradient($primaryColor, $light-green, diagonal);
+                    color: #FFF;
+                    text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
+                    .id_name {
+                        color: #FFF;
+                    }
+                    small {
+                        color: #FFF;
+                    }
+                    img {
+                        filter: brightness(200%);
+                    }
+                }
+            }
+        }
+    }
+    .step_block {
+        @extend %clearfix;
+        margin: .5em auto;
+        @include box-sizing;
+        ul {
+            @include li-reset;
+            li {
+                width: 20.5%;
+                min-width: 125px;
+                list-style: none;
+                float: left;
+                height: 120px;
+                margin-right: 3.5%;
+                @include border-radius(8px);
+                @include gradient(#F1F1F1, #DDD, vertical);
+                text-align: center;
+                padding: 1em .4em;
+                position: relative;
+                &:after {
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid #AAA;
+                    border-top: 0;
+                    border-left: 0;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    content: "";
+                    right: -1.2em;
+                    top: 40%;
+                    @include screen('mobile') {
+                        display: none;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                    &:after {
+                        display: none;
+                    }
+                    @include screen('mobile') {
+                        margin-right: auto;
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+                @include screen('mobile') {
+                    width: 90%;
+                    margin: 0px auto;
+                    float: none;
+                    height: 60px;
+                    margin-bottom: .5em;
+                    text-align: left;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                .num {
+                    font-size: 3em;
+                    text-align: left;
+                    font-weight: bold;
+                    margin-left: .1em;
+                    display: block;
+                    margin-top: .2em;
+                    margin-bottom: .5em;
+                    color: $aHover;
+                    @include screen('mobile') {
+                        float: left;
+                        margin: .2em 1em 0em 0;
+                        font-size: 4em;
+                    }
+                }
+                .step_name {
+                    font-weight: bold;
+                    font-size: 1.4em;
+                    overflow: hidden;
+                    margin-bottom: .3em;
+                }
+                .step_info {
+                    font-weight: bold;
+                    color: #666;
+                    overflow: hidden;
+                    display: none;
+                }
+                &.active {
+                    @include gradient($primaryColor, $light-green, diagonal);
+                    color: #FFF;
+                    text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
+                    .num {
+                        color: #FFF;
+                    }
+                    .step_name {
+                        color: #FFF;
+                    }
+                    .step_info {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+    .num{
+        font-weight: bold;
+        letter-spacing: .1em;
+        margin: 1em 0 .2em;
+    }
+}
+.gsc-control-cse{
+    table{
+        border:none !important;
+        th,td{
+            border:none !important;
+        }
+    }
+}
+
+.minus{
+    margin-left: 1em;
+    .btn{
+        font-size: .938em;
+        padding: .2em .8em!important;
+        vertical-align: middle;
+    }
+}

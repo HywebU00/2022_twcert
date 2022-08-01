@@ -1,0 +1,458 @@
+@charset "utf-8";
+// 文章標題
+h1.title {
+    line-height: 1.25em;
+    margin: .4em 0;
+}
+.cp {
+    .cp_block {
+        @extend %clearfix;
+    }
+    .h_title {}
+    .cp_article_block {
+        background: #EEE;
+        padding: 1.5em;
+        border-radius: 15px;
+        margin: 1em auto;
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: .5em;
+        }
+        h4 {
+            font-size: 1.25em;
+            margin-bottom: 1em;
+            color: $primaryColor;
+        }
+        h5 {
+            font-size: 1.125em;
+            margin-bottom: 1.5em;
+        }
+    }
+    table {
+        &.float_table {
+            float: left;
+            width: 70%;
+            @include screen('mobile') {
+                float: none;
+                width: 100%;
+            }
+        }
+        background: transparent;
+        th, td {
+            border: 1px solid transparent;
+            background: transparent;
+        }
+        &.border {
+            background: #FFF;
+            th,
+            td {
+                border: #ddd 1px solid;
+            }
+            th {
+                background-color: #F3F3F3;
+                color: #333;
+                border: #DDD 1px solid;
+            }
+        }
+    }
+    h2 {
+        overflow: hidden;
+        color: darken($light-blue, 10);
+        margin-bottom: 1em;
+    }
+    h3 {
+        color: darken($light-green, 25);
+    }
+    .btn {
+        color: #FFF !important;
+    }
+    pre {
+        background: #EEE;
+        border-radius: 6px;
+        padding: .5em;
+    }
+    .thumbpic {
+        float: right;
+        margin: 0px 0px 0px 1em;
+        width: 25%;
+        border: 1px solid #DDD;
+        padding: .5em;
+        background: #FFF;
+        text-align: center;
+        @include screen('mobile') {
+            float: none;
+            margin: 0px auto 1em;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+        }
+        span {
+            text-align: center;
+            width: 90%;
+            display: block;
+            font-size: .813em;
+        }
+    }
+    img {
+        margin: 1em auto;
+        max-width: 400px;
+        text-align: center;
+        display: block;
+        @include screen('mobile') {
+            max-width:100%;
+            float: none;
+            margin: 0 auto 1em;
+        }
+        &.float_left {
+            float: left;
+            margin: 0px 1em 1em 0;
+            width: auto;
+            max-width: 55%;
+            @include screen('mobile') {
+                float: none;
+                max-width: 100%;
+                margin: 0px auto;
+            }
+        }
+        &.float_right {
+            float: right;
+            margin: 0px 0 1em 1em;
+            width: auto;
+            max-width: 55%;
+            @include screen('mobile') {
+                float: none;
+                max-width: 100%;
+                margin: 0px auto;
+            }
+        }
+    }
+    a {
+        @include aSetting;
+        word-break: break-all;
+    }
+    .info {
+        font-size: 0.938em;
+        line-height: 1.5em;
+        list-style: none;
+        margin: 0 0 .7em 0;
+        border-left: solid 5px $primaryColor;
+        @include box-sizing;
+        padding: 0.8em 1.5em 0.8em;
+        background: #F2F2F2;
+        @extend %clearfix;
+        li {
+            width: 32%;
+            margin-bottom: .5em;
+            display: inline-block;
+            vertical-align: top;
+            @include screen('tablet') {
+                width: 48%;
+                margin-bottom: .2em;
+                font-size: 0.875em;
+            }
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+// cp function panel setting
+.cp_panel {
+    text-align: right;
+    margin: .2em 0;
+    padding: .5em 0 .2em;
+    min-height: 35px;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    @include screen('mobile') {
+        margin: .6em 0;
+        padding: .5em 0 .5em;
+    }
+    .share {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .function {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .publish_time {
+        float: left;
+        min-width: 100px;
+        display: block;
+        margin-top: .6em;
+        color: #666;
+        span {
+            font-size: .938em;
+            @include screen('mobile') {
+                display: none;
+            }
+        }
+        time {
+            font-family: georgia;
+            font-size: 1.125em;
+            @include screen('mobile') {
+                font-size: .938em;
+            }
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            top: .3em;
+            background: url(../images/basic/icon_time.png) no-repeat center center;
+            background-size: 12px;
+        }
+    }
+}
+// 文章標籤
+div.tag {
+    @extend %clearfix;
+    padding: .5em 0;
+    margin-bottom: .5em;
+    &:before {
+        display: inline-block;
+        content: "";
+        width: 16px;
+        height: 16px;
+        position: relative;
+        top: .2em;
+        background: url(../images/basic/icon_tag.png) no-repeat center center;
+        background-size: 16px;
+    }
+    ul {
+        display: inline-block;
+        @include li-reset;
+        li {
+            display: inline-block;
+            margin: 0 .2em .2em 0;
+            a {
+                display: block;
+                font-size: .813em;
+                @include aSetting_nocolor;
+                border-radius: 4px;
+                border: 1px solid #DDD;
+                padding: .2em .5em;
+            }
+        }
+    }
+}
+// 檔案下載
+/*檔案下載*/
+.file_download {
+    width: 100%;
+    margin: 0 auto;
+    @include clearfix();
+    h3 {
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 0.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+    ul {
+        counter-reset: counter;
+        list-style-type: none;
+        padding: 0;
+        margin-left: 1em;
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
+    }
+    li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 1em;
+        border-bottom: 1px solid #EEE;
+        clear: both;
+        overflow: hidden;
+        padding-bottom: 1em;
+        &:before {
+            position: absolute; // outline: 1px solid red;
+            top: 12px;
+            left: 0px;
+            text-align: right;
+            width: 30px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $color-orange;
+            content: "";
+            // counter-increment: counter;
+            // content: counters(counter, ".") " . ";
+            // display:none;
+        }
+        .update,
+        .file_view {
+            font-size: .813em;
+            color: #AAA;
+            width: 120px;
+            padding-left: 35px;
+            float: none;
+            margin-top: 5px;
+            @media screen and (max-width: 767px) {
+                display: inline-block;
+                float: none;
+                width: auto;
+                margin-top: 0;
+            }
+            @include screen('xs_mobile') {
+                display: none;
+            }
+        }
+        .update {
+            width: 150px;
+            @media screen and (max-width: 767px) {
+                margin-left: 5px;
+            }
+        }
+        span {
+            display: inline-block;
+            @include screen('mobile') {
+                display: block;
+                margin-bottom: .3em;
+            }
+        }
+        a {
+            padding: 0px 1em;
+            position: relative;
+            height: auto;
+            line-height: 1.25em;
+            display: inline-block;
+            color: #666;
+            vertical-align: middle;
+            margin: 0px .5em;
+            min-width: 5em;
+            text-align: center;
+            height: 1.5em;
+            @include text-overflow;
+            @include box-sizing;
+            margin-bottom: .1em;
+            border: 2px solid #999;
+            color: #555;
+            @include border-radius(4px);
+            @include screen('mobile') {
+                max-width: 200px;
+                margin: 0px auto .5em 0px;
+            }
+            &:hover,
+            &:focus {
+                border: 2px solid #666;
+                background: #666;
+                color: #FFF !important;
+            }
+            .kb {
+                font-size: .75em;
+                color: #666;
+                display: inline-block;
+                margin: 0px .5em;
+            }
+            &:after {
+                content: "";
+                background: url(../images/basic/icon_folder.png);
+                width: 21px;
+                height: 24px;
+                position: absolute;
+                top: 0px;
+                left: 0;
+                text-align: right;
+                display: none;
+            }
+            &[href$="doc"],
+            &[href$="docx"],
+            &[href$="odt"] {
+                background: #FFF;
+                border: 2px solid #1d75d4;
+                color: #1d75d4;
+                padding-bottom: .3em;
+                &:hover,
+                &:focus {
+                    background: #1d75d4;
+                    color: #FFF !important;
+                }
+            }
+            &[href$="pdf"] {
+                background: #FFF;
+                border: 2px solid red;
+                color: red;
+                &:hover,
+                &:focus {
+                    background: red;
+                    color: #FFF !important;
+                }
+            }
+            &[href$="xls"],
+            &[href$="csv"],
+            &[href$="ods"],
+            &[href$="xlsx"] {
+                background: #FFF;
+                border: 2px solid #61bc1e;
+                color: #61bc1e;
+                &:hover,
+                &:focus {
+                    background: #61bc1e;
+                    color: #FFF !important;
+                }
+            }
+            &[href$="ppt"],
+            &[href$="odp"],
+            &[href$="pptx"] {
+                background: #FFF;
+                border: 2px solid #db4526;
+                color: #db4526;
+                &:hover,
+                &:focus {
+                    background: #db4526;
+                    color: #FFF !important;
+                }
+            }
+        }
+    }
+}
+// 外部連結
+.web_link {
+    width: 100%;
+    margin: 0 auto;
+    @extend %clearfix;
+    h3 {
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 0.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+    ol,
+    ul {
+        counter-reset: counter;
+        list-style-type: none;
+        padding: 0;
+        margin-left: 1em;
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
+    }
+    li {
+        position: relative;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #EEE;
+        a {
+            padding: .2em 0px .2em 35px;
+            position: relative;
+            height: auto;
+            line-height: 1.45em;
+            display: block;
+            @include aSetting_nocolor;
+            word-break:break-all;
+            &:before {
+                position: absolute; // outline: 1px solid red;
+                top: 5px;
+                left: 0px;
+                text-align: right;
+                width: 30px;
+                counter-increment: counter;
+                content: counters(counter, ".") " . ";
+            }
+        }
+    }
+}
