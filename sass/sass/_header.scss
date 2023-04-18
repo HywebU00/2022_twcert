@@ -82,7 +82,8 @@
             &:hover,
             &:focus {
                 outline: none;
-                box-shadow: 0 0px 0px 1px $aHover inset;
+                // box-shadow: 0 0px 0px 1px $aHover inset;
+                border: dashed 2px $aFocus;
                 @include screen('mobile') {
                     box-shadow: none;
                 }
@@ -223,10 +224,12 @@
                 margin-left: -40px !important;
                 margin-top: -2px !important;
                 opacity: .8;
-                &:hover,
-                &:focus {
+                &:hover{
                     opacity: 1;
                     box-shadow: none !important;
+                }
+                &:focus{
+                    border: dashed 2px $aFocus!important;
                 }
             }
         }

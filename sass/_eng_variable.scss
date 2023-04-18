@@ -12,7 +12,7 @@ $importantColor:			#FF3E4D;				//重要
 
 $color-blue: 				#004592;
 $color-green:				#5CB85C;
-$color-orange: 				#F77810;
+$color-orange: 				#C25700;
 $color-red: 				#FF3E4D;
 $color-yellow: 				#FCC211;
 $color-purple: 				#AA5AC5;
@@ -22,14 +22,14 @@ $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#00828B;
-$aHover:					lighten($aColor,5);
-
+$aHover:					#C25700;
+$aFocus:					#c00;
 
 // 特殊色
-$light-blue:				#039be6;
-$light-green:				#15eef3;
+$light-blue:				#026392;
+$light-green:				#0AB9BD;
 // 表單focus顏色
-$form-focus:				#F77810;				//表單
+$form-focus:				#C25700;				//表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定

@@ -211,10 +211,12 @@ input[type="reset"]:focus,
 input[type="file"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="submit"]:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid lighten($form-focus, 20);
-    @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+    // border: 1px solid lighten($form-focus, 20);
+    border: dashed 2px $aFocus;
+    // @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
     outline: none;
 }
 //
@@ -239,7 +241,7 @@ select {
 //---------------------------------------------reset--------//
 input[type="reset"] {
     @extend %btn;
-    @include btn_setting(darken($color-gray, 20), #FFF);
+    @include btn_setting(darken($color-gray, 25), #FFF);
     text-shadow: none;
 }
 //---------------------------------------------checkbox & radio--------//

@@ -361,12 +361,12 @@
         }
         .slick-prev {
             &:focus {
-                box-shadow: 0 0px 0px 1px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aHover inset;
             }
         }
         .slick-next {
             &:focus {
-                box-shadow: 0 0px 0px 1px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aHover inset;
             }
         }
         a {

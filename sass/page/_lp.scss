@@ -183,12 +183,14 @@
                     text-align: left;
                     width: 94%;
                     margin-left: 3%;
-                    h3 {
+                    .title {
                         height: 3em;
                         overflow: hidden;
                         line-height: 1.5em;
                         display: block;
                         margin: 5px 0;
+                        font-weight: bold;
+                        font-size: 1.125em;
                     }
                     time {
                         color: #555;
@@ -232,13 +234,15 @@
                         bottom: 0;
                     }
                 }
-                h3 {
+                .title {
                     margin-bottom: 5px;
                     max-height: 2.7em;
                     line-height: 1.45em;
                     overflow: hidden;
                     display: block;
                     margin-top: 5px;
+                    font-weight: bold;
+                    font-size: 1.125em;
                 }
                 p {
                     margin-bottom: 5px;
