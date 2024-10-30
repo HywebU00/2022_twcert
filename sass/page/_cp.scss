@@ -37,10 +37,10 @@ h1.title {
                 width: 100%;
             }
         }
-        background: transparent;
+        // background: transparent;
         th, td {
-            border: 1px solid transparent;
-            background: transparent;
+            // border: 1px solid transparent;
+            // background: transparent;
         }
         &.border {
             background: #FFF;
@@ -96,7 +96,7 @@ h1.title {
     }
     img {
         margin: 1em auto;
-        max-width: 400px;
+        max-width: 100%;
         text-align: center;
         display: block;
         @include screen('mobile') {
