@@ -112,7 +112,7 @@ h1.title {
             @include screen('mobile') {
                 float: none;
                 max-width: 100%;
-                margin: 0px auto;
+                margin: 0px auto 1em;
             }
         }
         &.float_right {
@@ -123,7 +123,7 @@ h1.title {
             @include screen('mobile') {
                 float: none;
                 max-width: 100%;
-                margin: 0px auto;
+                margin: 0px auto 1em;
             }
         }
     }
