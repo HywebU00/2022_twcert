@@ -107,7 +107,7 @@ h1.title {
         &.float_left {
             float: left;
             margin: 0px 1em 1em 0;
-            width: auto;
+            width: 400px;
             max-width: 55%;
             @include screen('mobile') {
                 float: none;
@@ -118,7 +118,7 @@ h1.title {
         &.float_right {
             float: right;
             margin: 0px 0 1em 1em;
-            width: auto;
+            width: 400px;
             max-width: 55%;
             @include screen('mobile') {
                 float: none;
