@@ -206,6 +206,7 @@
     .bulletin {
         .btn_grp {
             text-align: center;
+            padding: 0;
         }
         width: 450px;
         height: 450px;
@@ -254,16 +255,25 @@
                 ::placeholder {
                     color: #666;
                 }
+                label {
+                    outline: 1px solid red;
+                    text-indent: -9999px;
+                    font-size: 0em;
+                    height: 0;
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0;
+                    display: none;
+                }
             }
-            label {
-                outline: 1px solid red;
-                text-indent: -9999px;
-                font-size: 0em;
-                height: 0;
-                overflow: hidden;
-                margin: 0;
-                padding: 0;
-                display: none;
+
+            .checkbox{
+                text-align: center;
+                font-size: .938em;
+                label{
+                    display: inline-block;
+                    color:#333;
+                }
             }
         }
     }
